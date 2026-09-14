@@ -1899,6 +1899,13 @@ body {
     text-shadow: 0 0 10px rgba(0, 240, 255, 0.7);
 }
 
+.synergy-img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+  margin-bottom: 30px;
+}
+
 @media (max-width: 768px) {
     .synergy-summary-box {
         padding: 40px 20px;
