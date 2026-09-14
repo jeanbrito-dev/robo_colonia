@@ -1,0 +1,1701 @@
+<!doctype html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>
+            Projeto Robótica Educacional | E. E. Colônia dos Pescadores
+        </title>
+        <meta
+            name="description"
+            content="Projeto de Robô Autônomo para transporte de materiais desenvolvido pelos cursos de Desenvolvimento de Sistemas e Logística da E. E. Colônia dos Pescadores."
+        />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@700;800;900&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <!-- HEADER / NAVBAR -->
+        <header class="navbar" id="navbar">
+            <div class="nav-container">
+                <a href="#hero" class="brand">
+                    <svg class="brand-icon" viewBox="0 0 32 32" fill="none">
+                        <rect
+                            x="4"
+                            y="8"
+                            width="24"
+                            height="16"
+                            rx="3"
+                            stroke="#00f0ff"
+                            stroke-width="2"
+                        />
+                        <circle cx="11" cy="16" r="3" fill="#00f0ff" />
+                        <circle cx="21" cy="16" r="3" fill="#00f0ff" />
+                        <path
+                            d="M16 2V8M10 24V28M22 24V28"
+                            stroke="#38bdf8"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                        />
+                    </svg>
+                    <div class="brand-text">
+                        <span class="brand-title">COLÔNIA ROBOTICS</span>
+                        <span class="brand-sub"
+                            >E. E. Colônia dos Pescadores</span
+                        >
+                    </div>
+                </a>
+
+                <button
+                    class="menu-toggle"
+                    id="menuToggle"
+                    aria-label="Abrir Menu"
+                >
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <nav class="nav-links" id="navLinks">
+                    <a href="#projeto">O Projeto</a>
+                    <a href="#por-que">Motivação</a>
+                    <a href="#funcionamento">Funcionamento</a>
+                    <a href="#componentes">Componentes</a>
+                    <a href="#trajetoria">Trajetória</a>
+                    <a href="#futuro">Futuro</a>
+                    <a href="#colaboracao" class="nav-btn">Ver Cursos</a>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <!-- 1. HERO SECTION (REFORMULADO: TECH JOVIAL / DRIP GRAFITE) -->
+            <section class="hero" id="hero">
+                <div class="hero-bg-grid"></div>
+                <div class="hero-glow-1"></div>
+                <div class="hero-glow-2"></div>
+
+                <!-- Splatter/Drip Grafite Details (SVG Visual Accents) -->
+                <div class="drip-accent-left">
+                    <svg viewBox="0 0 100 100" fill="none">
+                        <path
+                            d="M10 0 C 20 40, 5 60, 20 80 C 25 90, 30 100, 30 100 L 0 100 Z"
+                            fill="rgba(0, 240, 255, 0.12)"
+                        />
+                    </svg>
+                </div>
+
+                <div class="container hero-content">
+                    <div class="hero-text-side">
+                        <h1 class="hero-title drip-text">
+                            A NOSSA ESCOLA NO MODO FUTURO.
+                        </h1>
+                        <p class="hero-subtitle">
+                            Alunos de
+                            <strong>Desenvolvimento de Sistemas</strong> e
+                            <strong>Logística</strong> uniram forças pra colocar
+                            um robô autônomo pra rodar nos corredores da E. E.
+                            Colônia dos Pescadores. Sem enrolação: puro código,
+                            tração de 4 rodas e inteligência na pista.
+                        </p>
+                        <div class="hero-actions">
+                            <a href="#projeto" class="btn btn-primary btn-drip">
+                                COLAR NO PROJETO
+                                <svg
+                                    width="22"
+                                    height="22"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2.5"
+                                >
+                                    <path d="M5 12h14M12 5l7 7-7 7" />
+                                </svg>
+                            </a>
+                            <a href="#funcionamento" class="btn btn-secondary"
+                                >Ver a Mágica Acontecer</a
+                            >
+                        </div>
+
+                        <div class="hero-stats">
+                            <div class="stat-item">
+                                <span class="stat-num">100%</span>
+                                <span class="stat-label">Autônomo em rota</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-num">4</span>
+                                <span class="stat-label"
+                                    >Motores DC com Tração</span
+                                >
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-num">2</span>
+                                <span class="stat-label">Cursos no Corre</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <img
+                        src="carrinho2.png"
+                        alt="Robô autônomo para transporte de materiais"
+                        class="robot-hero-img"
+                    />
+                </div>
+            </section>
+
+            <!-- TRANSITION WAVE 1 -->
+            <div class="wave-transition">
+                <svg
+                    viewBox="0 0 1440 120"
+                    fill="none"
+                    preserveAspectRatio="none"
+                >
+                    <path
+                        d="M0,32L60,42.7C120,53,240,75,360,80C480,85,600,75,720,58.7C840,43,960,21,1080,21.3C1200,21,1320,43,1380,53.3L1440,64L1440,120L1380,120C1320,120,1200,120,1080,120C960,120,840,120,720,120C600,120,480,120,360,120C240,120,120,120,60,120L0,120Z"
+                        fill="#081325"
+                    />
+                </svg>
+            </div>
+
+            <!-- 2. O PROJETO -->
+            <section class="section section-dark" id="projeto">
+                <div class="container">
+                    <div class="section-header">
+                        <span class="section-subtitle">SINERGIA TÉCNICA</span>
+                        <h2 class="section-title">
+                            Engenharia e tecnologia a serviço da escola
+                        </h2>
+                        <p class="section-desc">
+                            O projeto nasceu do desafio de unir duas áreas do
+                            conhecimento técnico em uma aplicação prática,
+                            resolvendo demandas reais de mobilidade interna de
+                            materiais na E. E. Colônia dos Pescadores.
+                        </p>
+                    </div>
+
+                    <div class="synergy-grid">
+                        <!-- Card DS -->
+                        <div class="synergy-card ds-card">
+                            <div class="card-glow"></div>
+                            <div class="card-header">
+                                <div class="card-icon">
+                                    <svg
+                                        width="32"
+                                        height="32"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="#00f0ff"
+                                        stroke-width="2"
+                                    >
+                                        <polyline
+                                            points="16 18 22 12 16 6"
+                                        ></polyline>
+                                        <polyline
+                                            points="8 6 2 12 8 18"
+                                        ></polyline>
+                                        <line
+                                            x1="14"
+                                            y1="4"
+                                            x2="10"
+                                            y2="20"
+                                        ></line>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <span class="course-tag"
+                                        >Curso Técnico</span
+                                    >
+                                    <h3>Desenvolvimento de Sistemas</h3>
+                                </div>
+                            </div>
+                            <p class="card-body-text">
+                                Responsável pela lógica, código e eletrônica
+                                principal do robô:
+                            </p>
+                            <ul class="task-list">
+                                <li>
+                                    <span class="bullet"></span>Programação do
+                                    microcontrolador Arduino
+                                </li>
+                                <li>
+                                    <span class="bullet"></span>Lógica de
+                                    controle dos 4 motores DC
+                                </li>
+                                <li>
+                                    <span class="bullet"></span>Leitura e
+                                    tratamento dos sensores
+                                </li>
+                                <li>
+                                    <span class="bullet"></span>Desenvolvimento
+                                    futuro da interface de controle web
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="synergy-center">
+                            <img
+                                src="carrinho.png"
+                                alt="Robô Autônomo"
+                                class="synergy-small-img"
+                            />
+
+                            <span class="synergy-node-label"
+                                >ROBÔ AUTÔNOMO</span
+                            >
+                        </div>
+
+                        <!-- Card Logística -->
+                        <div class="synergy-card log-card">
+                            <div class="card-glow"></div>
+                            <div class="card-header">
+                                <div class="card-icon">
+                                    <svg
+                                        width="32"
+                                        height="32"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="#38bdf8"
+                                        stroke-width="2"
+                                    >
+                                        <rect
+                                            x="1"
+                                            y="3"
+                                            width="15"
+                                            height="13"
+                                        ></rect>
+                                        <polygon
+                                            points="16 8 20 8 23 11 23 16 16 16 16 8"
+                                        ></polygon>
+                                        <circle
+                                            cx="5.5"
+                                            cy="18.5"
+                                            r="2.5"
+                                        ></circle>
+                                        <circle
+                                            cx="18.5"
+                                            cy="18.5"
+                                            r="2.5"
+                                        ></circle>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <span class="course-tag log"
+                                        >Curso Técnico</span
+                                    >
+                                    <h3>Logística</h3>
+                                </div>
+                            </div>
+                            <p class="card-body-text">
+                                Responsável pela gestão de rota, materiais e
+                                eficiência do fluxo interno:
+                            </p>
+                            <ul class="task-list">
+                                <li>
+                                    <span class="bullet log"></span>Gestão dos
+                                    materiais transportados
+                                </li>
+                                <li>
+                                    <span class="bullet log"></span>Cálculo e
+                                    otimização da trajetória
+                                </li>
+                                <li>
+                                    <span class="bullet log"></span>Preparação e
+                                    verificação do percurso
+                                </li>
+                                <li>
+                                    <span class="bullet log"></span>Organização
+                                    e definição do fluxo de movimentação
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- TRANSITION WAVE 2 -->
+            <div class="wave-transition">
+                <svg
+                    viewBox="0 0 1440 120"
+                    fill="none"
+                    preserveAspectRatio="none"
+                >
+                    <path
+                        d="M0,0L120,21.3C240,43,480,85,720,85C960,85,1200,43,1320,21.3L1440,0L1440,120L1320,120C1200,120,960,120,720,120C480,120,240,120,120,120L0,120Z"
+                        fill="#0d1b2a"
+                    />
+                </svg>
+            </div>
+
+            <!-- 3. POR QUE ESSE ROBÔ? (RESTAURADO FIELEMENTE AO CÓDIGO INICIAL) -->
+            <section class="section section-medium" id="por-que">
+                <div class="container">
+                    <div class="grid-2-cols align-center">
+                        <div>
+                            <span class="section-subtitle"
+                                >POR QUE ESSE ROBÔ?</span
+                            >
+                            <h2 class="section-title">
+                                Automação e eficiência no ambiente escolar.
+                            </h2>
+                            <p class="text-content">
+                                O robô foi desenvolvido para realizar o
+                                transporte de pequenos materiais dentro da
+                                escola, reduzindo deslocamentos desnecessários e
+                                aplicando soluções reais de automação no
+                                cotidiano escolar.
+                            </p>
+
+                            <div class="applications-box">
+                                <div class="app-column">
+                                    <h4>Atualmente transporta:</h4>
+                                    <ul>
+                                        <li>
+                                            <svg
+                                                width="16"
+                                                height="16"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="#00f0ff"
+                                                stroke-width="3"
+                                            >
+                                                <polyline
+                                                    points="20 6 9 17 4 12"
+                                                />
+                                            </svg>
+                                            Celulares recolhidos
+                                        </li>
+                                        <li>
+                                            <svg
+                                                width="16"
+                                                height="16"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="#00f0ff"
+                                                stroke-width="3"
+                                            >
+                                                <polyline
+                                                    points="20 6 9 17 4 12"
+                                                />
+                                            </svg>
+                                            Pequenos objetos
+                                        </li>
+                                        <li>
+                                            <svg
+                                                width="16"
+                                                height="16"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="#00f0ff"
+                                                stroke-width="3"
+                                            >
+                                                <polyline
+                                                    points="20 6 9 17 4 12"
+                                                />
+                                            </svg>
+                                            Materiais escolares leves
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="app-column future-box">
+                                    <h4>Evolução futura:</h4>
+                                    <ul>
+                                        <li>
+                                            <svg
+                                                width="16"
+                                                height="16"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="#38bdf8"
+                                                stroke-width="3"
+                                            >
+                                                <path
+                                                    d="M5 12h14M12 5l7 7-7 7"
+                                                />
+                                            </svg>
+                                            Notebooks
+                                        </li>
+                                        <li>
+                                            <svg
+                                                width="16"
+                                                height="16"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="#38bdf8"
+                                                stroke-width="3"
+                                            >
+                                                <path
+                                                    d="M5 12h14M12 5l7 7-7 7"
+                                                />
+                                            </svg>
+                                            Materiais de maior porte
+                                        </li>
+                                        <li>
+                                            <svg
+                                                width="16"
+                                                height="16"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="#38bdf8"
+                                                stroke-width="3"
+                                            >
+                                                <path
+                                                    d="M5 12h14M12 5l7 7-7 7"
+                                                />
+                                            </svg>
+                                            Cargas com maior peso
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Diagrama de Trajetória Solicitação -> Transporte -> Destino -->
+                        <div class="flow-visual-container">
+                            <div class="flow-header">Fluxo de Operação</div>
+                            <div class="flow-step">
+                                <div class="step-number">A</div>
+                                <div class="step-info">
+                                    <h5>Solicitação</h5>
+                                    <p>
+                                        O material é inserido na caixa de
+                                        transporte na origem.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="flow-connector">
+                                <div class="pulse-dot"></div>
+                            </div>
+                            <div class="flow-step active-step">
+                                <div class="step-number">→</div>
+                                <div class="step-info">
+                                    <h5>Transporte Autônomo</h5>
+                                    <p>
+                                        Navegação do robô pela trajetória com
+                                        desvio de obstáculos.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="flow-connector">
+                                <div class="pulse-dot"></div>
+                            </div>
+                            <div class="flow-step">
+                                <div class="step-number">B</div>
+                                <div class="step-info">
+                                    <h5>Destino</h5>
+                                    <p>
+                                        Entrega concluída no ponto A → Ponto B
+                                        configurado.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- TRANSITION WAVE 3 -->
+            <div class="wave-transition">
+                <svg
+                    viewBox="0 0 1440 120"
+                    fill="none"
+                    preserveAspectRatio="none"
+                >
+                    <path
+                        d="M0,64L80,69.3C160,75,320,85,480,80C640,75,800,53,960,48C1120,43,1280,53,1360,58.7L1440,64L1440,120L1360,120C1280,120,1120,120,960,120C800,120,640,120,480,120C320,120,160,120,80,120L0,120Z"
+                        fill="#030712"
+                    />
+                </svg>
+            </div>
+
+            <!-- 4. COMO O ROBÔ FUNCIONA (GRID BENTO DESALINHADA COM IMAGENS REALISTAS) -->
+            <section class="section section-dark" id="funcionamento">
+                <div class="container">
+                    <div class="section-header">
+                        <span class="section-subtitle"
+                            >ARQUITETURA DE HARDWARE</span
+                        >
+                        <h2 class="section-title">Como o robô funciona</h2>
+                        <p class="section-desc">
+                            A lógica de processamento do Arduino integra os
+                            sensores e os motores em tempo real para permitir
+                            navegação autônoma e desvio de obstáculos.
+                        </p>
+                    </div>
+
+                    <!-- Grid Desalinhada / Bento Grid -->
+                    <div class="bento-grid">
+                        <!-- Card 1: Arduino UNO (Destaque Principal - Maior) -->
+                        <div class="bento-card card-large card-arduino">
+                            <div class="bento-img-wrap">
+                                <img
+                                    src="https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcRsS4nMFb2oecAkyv_ONa0sFtVj5gb_LgsugF8TKN2hLE63ir7djlZW7NsUWJlHRL_wVqbE_R4es4gpe28"
+                                    alt="Arduino UNO Microcontrolador"
+                                    class="bento-img"
+                                />
+                                <div class="bento-overlay"></div>
+                            </div>
+                            <div class="bento-content">
+                                <span class="bento-tag">CÉREBRO DO ROBÔ</span>
+                                <h3>Arduino UNO</h3>
+                                <p>
+                                    Microcontrolador central responsável pela
+                                    leitura contínua dos sensores e execução do
+                                    código de decisão e movimentação.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Card 2: Sensor Ultrassônico HC-SR04 -->
+                        <div class="bento-card card-medium card-sensor">
+                            <div class="bento-img-wrap">
+                                <img
+                                    src="https://encrypted-tbn2.gstatic.com/licensed-image?q=tbn:ANd9GcQwxBVjaLno1UiJYj0xTk3hcfMcD468OdIvaTyAi1HiAmgEcoh1l_nr8PtT0EQzSnuxC-oqBi6rbAuOb5U"
+                                    alt="Sensor Ultrassônico HC-SR04"
+                                    class="bento-img"
+                                />
+                                <div class="bento-overlay"></div>
+                            </div>
+                            <div class="bento-content">
+                                <span class="bento-tag sky"
+                                    >SEGURANÇA FRONTAL</span
+                                >
+                                <h3>Sensor Ultrassônico</h3>
+                                <p>
+                                    Mede a distância de objetos à frente
+                                    emitindo ondas de ultrassom para evitar
+                                    colisões nos corredores.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Card 3: Driver Ponte H L298N -->
+                        <div class="bento-card card-medium card-driver">
+                            <div class="bento-img-wrap">
+                                <img
+                                    src="https://encrypted-tbn1.gstatic.com/licensed-image?q=tbn:ANd9GcQyIkEuFycy1DEsONYRbBNZP-3GBMZxEpz9JN9sZsEsk5FJWsNN6FRgOJAWAyPnnpBJLnnxiExFc5lDnI4"
+                                    alt="Driver Ponte H L298N"
+                                    class="bento-img"
+                                />
+                                <div class="bento-overlay"></div>
+                            </div>
+                            <div class="bento-content">
+                                <span class="bento-tag sky"
+                                    >POTÊNCIA & CONTROLE</span
+                                >
+                                <h3>2 Drivers Ponte H</h3>
+                                <p>
+                                    Módulos L298N que recebem o comando do
+                                    Arduino para controlar o sentido de rotação
+                                    e velocidade dos motores.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Card 4: Motores DC & Movimentação (Largo Horizontal) -->
+                        <div class="bento-card card-wide card-motors">
+                            <div class="bento-img-wrap">
+                                <img
+                                    src="https://encrypted-tbn3.gstatic.com/licensed-image?q=tbn:ANd9GcTE0O8jmMGQt8vM_S8huSmsXlSLA3fHZoqliWvI76G59ozuHjVt4l5MH88M6lq6LlmsMiyuFQfpbU9y7SY"
+                                    alt="Motor DC com Caixa de Redução"
+                                    class="bento-img"
+                                />
+                                <div class="bento-overlay"></div>
+                            </div>
+                            <div class="bento-content">
+                                <span class="bento-tag">SISTEMA DE TRAÇÃO</span>
+                                <h3>4 Motores DC com Redução</h3>
+                                <p>
+                                    Garantes tração independente em cada roda,
+                                    torque suficiente para transporte de carga e
+                                    agilidade nas curvas.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- TRANSITION WAVE 4 -->
+            <div class="wave-transition">
+                <svg
+                    viewBox="0 0 1440 120"
+                    fill="none"
+                    preserveAspectRatio="none"
+                >
+                    <path
+                        d="M0,32L120,42.7C240,53,480,75,720,64C960,53,1200,11,1320,0L1440,0L1440,120L1320,120C1200,120,960,120,720,120C480,120,240,120,120,120L0,120Z"
+                        fill="#081325"
+                    />
+                </svg>
+            </div>
+
+            <!-- 6. TRAJETÓRIA E NAVEGAÇÃO -->
+            <section class="section section-dark" id="trajetoria">
+                <div class="container">
+                    <div class="section-header">
+                        <span class="section-subtitle">CURSO DE LOGÍSTICA</span>
+                        <h2 class="section-title">Trajetória e Navegação</h2>
+                        <p class="section-desc">
+                            O robô utiliza uma rota mapeada e otimizada pelo
+                            curso de Logística. O trajeto é calculado para
+                            evitar áreas de alto fluxo e garantir entregas
+                            rápidas entre as salas.
+                        </p>
+                    </div>
+
+                    <!-- Dashboard de Navegação Estilo Telemetria -->
+                    <div class="nav-dashboard">
+                        <!-- Painel Lateral (Status e Legenda) -->
+                        <div class="nav-sidebar">
+                            <div class="telemetry-panel">
+                                <div class="telemetry-header">
+                                    <span class="live-dot pulse"></span>
+                                    <span>SISTEMA DE NAVEGAÇÃO</span>
+                                </div>
+
+                                <div class="telemetry-data">
+                                    <div class="data-row">
+                                        <span class="data-label">STATUS</span>
+                                        <span class="data-value text-cyan"
+                                            >AGUARDANDO COMANDO</span
+                                        >
+                                    </div>
+                                    <div class="data-row">
+                                        <span class="data-label"
+                                            >DISTÂNCIA</span
+                                        >
+                                        <span class="data-value"
+                                            >52.4 METROS</span
+                                        >
+                                    </div>
+                                    <div class="data-row">
+                                        <span class="data-label"
+                                            >TEMPO EST.</span
+                                        >
+                                        <span class="data-value">01M 15S</span>
+                                    </div>
+                                </div>
+
+                                <div class="nav-legend">
+                                    <h4>LEGENDA DA PLANTA</h4>
+                                    <ul>
+                                        <li>
+                                            <span
+                                                class="legend-color origin"
+                                            ></span>
+                                            Ponto de Origem
+                                        </li>
+                                        <li>
+                                            <span
+                                                class="legend-color dest"
+                                            ></span>
+                                            Ponto de Destino
+                                        </li>
+                                        <li>
+                                            <span
+                                                class="legend-color path"
+                                            ></span>
+                                            Rota Otimizada
+                                        </li>
+                                        <li>
+                                            <span
+                                                class="legend-color block"
+                                            ></span>
+                                            Área Isolada / Salas
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <button id="btnSimulateRoute" class="btn-cyber">
+                                    <svg
+                                        width="18"
+                                        height="18"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                    >
+                                        <polygon points="5 3 19 12 5 21 5 3" />
+                                    </svg>
+                                    INICIAR SIMULAÇÃO
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Painel do Mapa -->
+                        <div class="nav-map-display">
+                            <div class="map-overlay-grid"></div>
+                            <div class="map-corner top-left"></div>
+                            <div class="map-corner top-right"></div>
+                            <div class="map-corner bottom-left"></div>
+                            <div class="map-corner bottom-right"></div>
+                            <span class="map-coord">COORD // X:74 Y:12</span>
+
+                            <svg
+                                viewBox="0 0 800 400"
+                                id="schoolMapSvg"
+                                class="tech-map-svg"
+                            >
+                                <defs>
+                                    <!-- Grid de Fundo -->
+                                    <pattern
+                                        id="gridPattern"
+                                        width="40"
+                                        height="40"
+                                        patternUnits="userSpaceOnUse"
+                                    >
+                                        <path
+                                            d="M 40 0 L 0 0 0 40"
+                                            fill="none"
+                                            stroke="rgba(0, 240, 255, 0.05)"
+                                            stroke-width="1"
+                                        />
+                                    </pattern>
+                                    <!-- Padrão de Hachura para Paredes/Áreas -->
+                                    <pattern
+                                        id="hatch"
+                                        width="8"
+                                        height="8"
+                                        patternTransform="rotate(45)"
+                                        patternUnits="userSpaceOnUse"
+                                    >
+                                        <line
+                                            x1="0"
+                                            y1="0"
+                                            x2="0"
+                                            y2="8"
+                                            stroke="rgba(0, 240, 255, 0.1)"
+                                            stroke-width="2"
+                                        />
+                                    </pattern>
+                                    <!-- Brilho Neon para a Rota -->
+                                    <filter
+                                        id="neonGlow"
+                                        x="-20%"
+                                        y="-20%"
+                                        width="140%"
+                                        height="140%"
+                                    >
+                                        <feGaussianBlur
+                                            stdDeviation="4"
+                                            result="blur"
+                                        />
+                                        <feMerge>
+                                            <feMergeNode in="blur" />
+                                            <feMergeNode in="SourceGraphic" />
+                                        </feMerge>
+                                    </filter>
+                                </defs>
+
+                                <!-- Fundo Quadriculado -->
+                                <rect
+                                    width="100%"
+                                    height="100%"
+                                    fill="url(#gridPattern)"
+                                />
+
+                                <!-- Corredor Principal -->
+                                <rect
+                                    x="40"
+                                    y="160"
+                                    width="720"
+                                    height="80"
+                                    fill="rgba(10, 25, 47, 0.4)"
+                                    stroke="rgba(0, 240, 255, 0.3)"
+                                    stroke-width="1"
+                                />
+
+                                <!-- Ponto A (Secretaria) -->
+                                <rect
+                                    x="40"
+                                    y="40"
+                                    width="200"
+                                    height="120"
+                                    fill="url(#hatch)"
+                                    stroke="#38bdf8"
+                                    stroke-width="2"
+                                />
+                                <rect
+                                    x="40"
+                                    y="40"
+                                    width="200"
+                                    height="120"
+                                    fill="rgba(56, 189, 248, 0.05)"
+                                />
+                                <text
+                                    x="140"
+                                    y="90"
+                                    fill="#38bdf8"
+                                    font-family="Space Grotesk"
+                                    font-size="16"
+                                    font-weight="900"
+                                    text-anchor="middle"
+                                    letter-spacing="2"
+                                >
+                                    PONTO A
+                                </text>
+                                <text
+                                    x="140"
+                                    y="110"
+                                    fill="rgba(255,255,255,0.7)"
+                                    font-family="Inter"
+                                    font-size="11"
+                                    text-anchor="middle"
+                                    letter-spacing="1"
+                                >
+                                    ORIGEM / SECRETARIA
+                                </text>
+
+                                <!-- Ponto B (Sala dos Professores) -->
+                                <rect
+                                    x="560"
+                                    y="240"
+                                    width="200"
+                                    height="120"
+                                    fill="url(#hatch)"
+                                    stroke="#00f0ff"
+                                    stroke-width="2"
+                                />
+                                <rect
+                                    x="560"
+                                    y="240"
+                                    width="200"
+                                    height="120"
+                                    fill="rgba(0, 240, 255, 0.05)"
+                                />
+                                <text
+                                    x="660"
+                                    y="290"
+                                    fill="#00f0ff"
+                                    font-family="Space Grotesk"
+                                    font-size="16"
+                                    font-weight="900"
+                                    text-anchor="middle"
+                                    letter-spacing="2"
+                                >
+                                    PONTO B
+                                </text>
+                                <text
+                                    x="660"
+                                    y="310"
+                                    fill="rgba(255,255,255,0.7)"
+                                    font-family="Inter"
+                                    font-size="11"
+                                    text-anchor="middle"
+                                    letter-spacing="1"
+                                >
+                                    DESTINO / SALA
+                                </text>
+
+                                <!-- Outras Áreas / Salas Climatizadas -->
+                                <rect
+                                    x="260"
+                                    y="40"
+                                    width="160"
+                                    height="120"
+                                    fill="rgba(255,255,255,0.01)"
+                                    stroke="rgba(255,255,255,0.1)"
+                                    stroke-width="1"
+                                />
+                                <text
+                                    x="340"
+                                    y="100"
+                                    fill="rgba(255,255,255,0.3)"
+                                    font-family="Inter"
+                                    font-size="10"
+                                    text-anchor="middle"
+                                    letter-spacing="1"
+                                >
+                                    SALA DE AULA 01
+                                </text>
+
+                                <rect
+                                    x="440"
+                                    y="40"
+                                    width="160"
+                                    height="120"
+                                    fill="rgba(255,255,255,0.01)"
+                                    stroke="rgba(255,255,255,0.1)"
+                                    stroke-width="1"
+                                />
+                                <text
+                                    x="520"
+                                    y="100"
+                                    fill="rgba(255,255,255,0.3)"
+                                    font-family="Inter"
+                                    font-size="10"
+                                    text-anchor="middle"
+                                    letter-spacing="1"
+                                >
+                                    SALA DE AULA 02
+                                </text>
+
+                                <!-- Nodes de Trajetória (Waypoints) -->
+                                <circle
+                                    cx="140"
+                                    cy="160"
+                                    r="4"
+                                    fill="#38bdf8"
+                                />
+                                <circle
+                                    cx="140"
+                                    cy="200"
+                                    r="4"
+                                    fill="#38bdf8"
+                                />
+                                <circle
+                                    cx="660"
+                                    cy="200"
+                                    r="4"
+                                    fill="#00f0ff"
+                                />
+                                <circle
+                                    cx="660"
+                                    cy="240"
+                                    r="4"
+                                    fill="#00f0ff"
+                                />
+
+                                <!-- Caminho Rota Otimizada -->
+                                <path
+                                    id="robotPath"
+                                    d="M 140 160 L 140 200 L 660 200 L 660 240"
+                                    fill="none"
+                                    stroke="#00f0ff"
+                                    stroke-width="3"
+                                    stroke-dasharray="8 8"
+                                    filter="url(#neonGlow)"
+                                    opacity="0.6"
+                                />
+
+                                <!-- Avatar do Robô (Mantém o ID para o JS) -->
+                                <g
+                                    id="simulatedRobot"
+                                    transform="translate(140, 160)"
+                                >
+                                    <!-- Anéis de Radar em volta do robô -->
+                                    <circle
+                                        cx="0"
+                                        cy="0"
+                                        r="24"
+                                        fill="none"
+                                        stroke="#00f0ff"
+                                        stroke-width="1"
+                                        class="radar-ring"
+                                    />
+                                    <circle
+                                        cx="0"
+                                        cy="0"
+                                        r="14"
+                                        fill="rgba(0, 240, 255, 0.2)"
+                                    />
+                                    <!-- Corpo do Robô Visão Superior -->
+                                    <rect
+                                        x="-8"
+                                        y="-10"
+                                        width="16"
+                                        height="20"
+                                        rx="3"
+                                        fill="#030712"
+                                        stroke="#00f0ff"
+                                        stroke-width="2"
+                                    />
+                                    <line
+                                        x1="-5"
+                                        y1="-5"
+                                        x2="5"
+                                        y2="-5"
+                                        stroke="#38bdf8"
+                                        stroke-width="2"
+                                    />
+                                    <circle
+                                        cx="0"
+                                        cy="2"
+                                        r="3"
+                                        fill="#38bdf8"
+                                    />
+                                </g>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 7. DETECÇÃO DE OBSTÁCULOS -->
+            <section class="section section-medium" id="deteccao">
+                <div class="container">
+                    <div class="section-header">
+                        <span class="section-subtitle"
+                            >SEGURANÇA E TELEMETRIA</span
+                        >
+                        <h2 class="section-title">
+                            Detecção de Obstáculos em Tempo Real
+                        </h2>
+                        <p class="section-desc">
+                            Equipado com o sensor ultrassônico HC-SR04 na parte
+                            frontal, o robô dispara rajadas de ultrassom a
+                            40kHz, calcula a distância dos objetos pelo tempo de
+                            eco e aciona a parada de emergência ao aproximar-se
+                            do limite de segurança.
+                        </p>
+                    </div>
+
+                    <div class="sonar-terminal-grid">
+                        <!-- Coluna da Esquerda: Controle do Simulador e Especificações -->
+                        <div class="sonar-control-col">
+                            <div class="sonar-card">
+                                <div class="sonar-card-header">
+                                    <span class="sonar-chip"
+                                        ><span class="chip-dot"></span> SENSOR
+                                        HC-SR04</span
+                                    >
+                                    <span class="sensor-freq"
+                                        >40 kHz / 5V DC</span
+                                    >
+                                </div>
+
+                                <h3 class="sonar-card-title">
+                                    Simulador de Distância Interativo
+                                </h3>
+                                <p class="sonar-card-desc">
+                                    Arraste o controle para simular um obstáculo
+                                    se aproximando da frente do robô:
+                                </p>
+
+                                <div class="slider-container-tech">
+                                    <div class="slider-header-info">
+                                        <label for="obstacleDistance"
+                                            >DISTÂNCIA MEDIDA:</label
+                                        >
+                                        <span class="slider-value-display"
+                                            ><strong id="distValue"
+                                                >45 cm</strong
+                                            ></span
+                                        >
+                                    </div>
+                                    <input
+                                        type="range"
+                                        id="obstacleDistance"
+                                        min="5"
+                                        max="150"
+                                        value="45"
+                                        class="custom-cyber-slider"
+                                    />
+                                    <div class="slider-range-labels">
+                                        <span>5 cm (Crítico)</span>
+                                        <span>20 cm (Limite)</span>
+                                        <span>150 cm (Máx)</span>
+                                    </div>
+                                </div>
+
+                                <div
+                                    class="sonar-status-box"
+                                    id="sonarStatusBox"
+                                >
+                                    <div class="status-icon-wrap">
+                                        <span class="status-indicator"></span>
+                                    </div>
+                                    <span id="sonarStatusText"
+                                        >Status: CAMINHO LIVRE</span
+                                    >
+                                </div>
+
+                                <!-- Métricas Técnicas Adicionais -->
+                                <div class="sensor-specs-grid">
+                                    <div class="spec-item">
+                                        <span class="spec-label"
+                                            >ÂNGULO DE ABERTURA</span
+                                        >
+                                        <span class="spec-val"
+                                            >15° Conical</span
+                                        >
+                                    </div>
+                                    <div class="spec-item">
+                                        <span class="spec-label"
+                                            >PRECISÃO DE LEITURA</span
+                                        >
+                                        <span class="spec-val">~3 mm</span>
+                                    </div>
+                                    <div class="spec-item">
+                                        <span class="spec-label"
+                                            >LIMIAR DE PARADA</span
+                                        >
+                                        <span class="spec-val text-alert"
+                                            >20 cm</span
+                                        >
+                                    </div>
+                                    <div class="spec-item">
+                                        <span class="spec-label"
+                                            >TEMPO DE RESPOSTA</span
+                                        >
+                                        <span class="spec-val">&lt; 10 ms</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Coluna da Direita: HUD Radar Visual Interativo -->
+                        <div class="radar-display-col">
+                            <div class="radar-hud-box">
+                                <div class="hud-corners top-left"></div>
+                                <div class="hud-corners top-right"></div>
+                                <div class="hud-corners bottom-left"></div>
+                                <div class="hud-corners bottom-right"></div>
+
+                                <div class="radar-hud-header">
+                                    <span class="hud-title"
+                                        >SONAR SCOPE // LIVE FEED</span
+                                    >
+                                    <span class="hud-units"
+                                        >ESCALA: METROS/CM</span
+                                    >
+                                </div>
+
+                                <svg
+                                    viewBox="0 0 340 340"
+                                    class="radar-svg-tech"
+                                >
+                                    <defs>
+                                        <!-- Gradiente do Feixe do Radar -->
+                                        <linearGradient
+                                            id="sweepGradient"
+                                            x1="0%"
+                                            y1="0%"
+                                            x2="100%"
+                                            y2="100%"
+                                        >
+                                            <stop
+                                                offset="0%"
+                                                stop-color="#00f0ff"
+                                                stop-opacity="0.6"
+                                            />
+                                            <stop
+                                                offset="50%"
+                                                stop-color="#00f0ff"
+                                                stop-opacity="0.1"
+                                            />
+                                            <stop
+                                                offset="100%"
+                                                stop-color="#00f0ff"
+                                                stop-opacity="0"
+                                            />
+                                        </linearGradient>
+
+                                        <!-- Brilho Neon -->
+                                        <filter
+                                            id="radarGlow"
+                                            x="-20%"
+                                            y="-20%"
+                                            width="140%"
+                                            height="140%"
+                                        >
+                                            <feGaussianBlur
+                                                stdDeviation="3"
+                                                result="blur"
+                                            />
+                                            <feMerge>
+                                                <feMergeNode in="blur" />
+                                                <feMergeNode
+                                                    in="SourceGraphic"
+                                                />
+                                            </feMerge>
+                                        </filter>
+                                    </defs>
+
+                                    <!-- Fundo do Radar com Anéis Graduados -->
+                                    <circle
+                                        cx="170"
+                                        cy="170"
+                                        r="150"
+                                        fill="rgba(3, 12, 28, 0.95)"
+                                        stroke="#00f0ff"
+                                        stroke-width="2"
+                                        class="radar-outer-ring"
+                                    />
+                                    <circle
+                                        cx="170"
+                                        cy="170"
+                                        r="115"
+                                        fill="none"
+                                        stroke="rgba(0,240,255,0.25)"
+                                        stroke-width="1"
+                                        stroke-dasharray="4 4"
+                                    />
+                                    <circle
+                                        cx="170"
+                                        cy="170"
+                                        r="80"
+                                        fill="none"
+                                        stroke="rgba(0,240,255,0.3)"
+                                        stroke-width="1"
+                                    />
+                                    <circle
+                                        cx="170"
+                                        cy="170"
+                                        r="45"
+                                        fill="none"
+                                        stroke="rgba(239,68,68,0.4)"
+                                        stroke-width="1.5"
+                                        stroke-dasharray="2 2"
+                                    />
+
+                                    <!-- Linha de Limite Crítico (20cm Zone) -->
+                                    <circle
+                                        cx="170"
+                                        cy="170"
+                                        r="45"
+                                        fill="rgba(239,68,68,0.05)"
+                                    />
+
+                                    <!-- Retículos de Miras e Ângulos -->
+                                    <line
+                                        x1="170"
+                                        y1="20"
+                                        x2="170"
+                                        y2="320"
+                                        stroke="rgba(0,240,255,0.2)"
+                                        stroke-width="1"
+                                    />
+                                    <line
+                                        x1="20"
+                                        y1="170"
+                                        x2="320"
+                                        y2="170"
+                                        stroke="rgba(0,240,255,0.2)"
+                                        stroke-width="1"
+                                    />
+                                    <line
+                                        x1="64"
+                                        y1="64"
+                                        x2="276"
+                                        y2="276"
+                                        stroke="rgba(0,240,255,0.1)"
+                                        stroke-width="1"
+                                    />
+                                    <line
+                                        x1="64"
+                                        y1="276"
+                                        x2="276"
+                                        y2="64"
+                                        stroke="rgba(0,240,255,0.1)"
+                                        stroke-width="1"
+                                    />
+
+                                    <!-- Rótulos de Alcance no Radar -->
+                                    <text
+                                        x="175"
+                                        y="40"
+                                        fill="rgba(0,240,255,0.5)"
+                                        font-family="Space Grotesk"
+                                        font-size="9"
+                                    >
+                                        150cm
+                                    </text>
+                                    <text
+                                        x="175"
+                                        y="75"
+                                        fill="rgba(0,240,255,0.5)"
+                                        font-family="Space Grotesk"
+                                        font-size="9"
+                                    >
+                                        100cm
+                                    </text>
+                                    <text
+                                        x="175"
+                                        y="110"
+                                        fill="rgba(0,240,255,0.5)"
+                                        font-family="Space Grotesk"
+                                        font-size="9"
+                                    >
+                                        50cm
+                                    </text>
+                                    <text
+                                        x="175"
+                                        y="145"
+                                        fill="rgba(239,68,68,0.7)"
+                                        font-family="Space Grotesk"
+                                        font-size="9"
+                                        font-weight="bold"
+                                    >
+                                        20cm
+                                    </text>
+
+                                    <!-- Feixe Varredor do Radar (Mantém o ID 'radarSweep') -->
+                                    <g id="radarSweepGroup">
+                                        <line
+                                            x1="170"
+                                            y1="170"
+                                            x2="270"
+                                            y2="70"
+                                            stroke="#00f0ff"
+                                            stroke-width="2.5"
+                                            id="radarSweep"
+                                            filter="url(#radarGlow)"
+                                        />
+                                        <polygon
+                                            points="170,170 270,70 300,110"
+                                            fill="url(#sweepGradient)"
+                                            opacity="0.4"
+                                        />
+                                    </g>
+
+                                    <!-- Ponto do Obstáculo Detectado (Mantém o ID 'radarObstacleDot') -->
+                                    <g id="obstacleTargetGroup">
+                                        <circle
+                                            cx="215"
+                                            cy="125"
+                                            r="16"
+                                            fill="rgba(239,68,68,0.25)"
+                                            class="obstacle-ping-ring"
+                                        />
+                                        <circle
+                                            cx="215"
+                                            cy="125"
+                                            r="7"
+                                            fill="#ff4d4d"
+                                            id="radarObstacleDot"
+                                            filter="url(#radarGlow)"
+                                        />
+                                    </g>
+
+                                    <!-- Origem do Sensor Central -->
+                                    <circle
+                                        cx="170"
+                                        cy="170"
+                                        r="5"
+                                        fill="#00f0ff"
+                                    />
+                                    <circle
+                                        cx="170"
+                                        cy="170"
+                                        r="2"
+                                        fill="#fff"
+                                    />
+
+                                    <text
+                                        x="170"
+                                        y="305"
+                                        fill="#38bdf8"
+                                        font-family="Space Grotesk"
+                                        font-size="11"
+                                        font-weight="bold"
+                                        text-anchor="middle"
+                                        letter-spacing="1"
+                                    >
+                                        VARREDURA FRONTALE ULTRASSÔNICA
+                                    </text>
+                                </svg>
+
+                                <div class="radar-hud-footer">
+                                    <span class="hud-status-tag"
+                                        ><span class="pulse-dot-cyan"></span>
+                                        ECO ATIVO</span
+                                    >
+                                    <span class="hud-status-tag"
+                                        >TRIG: PIN 12 // ECHO: PIN 11</span
+                                    >
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- TRANSITION WAVE 5 -->
+            <div class="wave-transition">
+                <svg
+                    viewBox="0 0 1440 120"
+                    fill="none"
+                    preserveAspectRatio="none"
+                >
+                    <path
+                        d="M0,64L120,53.3C240,43,480,21,720,32C960,43,1200,85,1320,106.7L1440,128L1440,120L1320,120C1200,120,960,120,720,120C480,120,240,120,120,120L0,120Z"
+                        fill="#030712"
+                    />
+                </svg>
+            </div>
+
+            <!-- 8. FUTURO DO PROJETO (GRID DE ARQUITETURA IOT E SISTEMA DE SOLICITAÇÃO) -->
+            <section class="section section-dark" id="futuro">
+                <div class="container">
+                    <div class="section-header">
+                        <span class="section-subtitle"
+                            >ARQUITETURA EM DESENVOLVIMENTO</span
+                        >
+                        <h2 class="section-title">
+                            Futuro Sistema de Solicitação via Web
+                        </h2>
+                        <p class="section-desc">
+                            A próxima evolução do projeto integrará uma segunda
+                            placa com conectividade Wi-Fi (ESP32), criando uma
+                            rede IoT que conecta professores e funcionários
+                            diretamente ao robô por meio de uma interface web.
+                        </p>
+                    </div>
+
+                    <!-- Grid Assimétrica de Fluxo Futuro -->
+                    <div class="future-mesh-grid">
+                        <!-- Card 1: Interface Web & Solicitante (Destaque Principal Lado Esquerdo - Span 7) -->
+                        <div class="future-card f-card-main">
+                            <div class="f-badge-step">FASE 01 & 02</div>
+                            <div class="f-img-container">
+                                <img
+                                    src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1000&q=80"
+                                    alt="Interface Web e Dashboard do Usuário"
+                                    class="f-img"
+                                />
+                                <div class="f-gradient-overlay"></div>
+                            </div>
+                            <div class="f-card-body">
+                                <div class="f-tech-tag">
+                                    <span class="tag-pulse"></span> WEB APP
+                                    RESPONSIVO
+                                </div>
+                                <h3>1. Solicitação do Professor & Interface</h3>
+                                <p>
+                                    O professor ou funcionário acessa o painel
+                                    web em tempo real, seleciona o ponto de
+                                    entrega (sala ou departamento) e dispara o
+                                    chamado de transporte.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Card 2: Requisição HTTP & Conectividade (Canto Superior Direito - Span 5) -->
+                        <div class="future-card f-card-net">
+                            <div class="f-badge-step">FASE 03</div>
+                            <div class="f-img-container">
+                                <img
+                                    src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=800&q=80"
+                                    alt="Rede sem fio e envio de requisições HTTP"
+                                    class="f-img"
+                                />
+                                <div class="f-gradient-overlay"></div>
+                            </div>
+                            <div class="f-card-body">
+                                <div class="f-tech-tag sky">
+                                    REDE WI-FI INTERNA
+                                </div>
+                                <h3>2. Requisição HTTP / Pacote de Dados</h3>
+                                <p>
+                                    A solicitação é convertida em um pacote HTTP
+                                    criptografado e enviada instantaneamente
+                                    pela rede sem fio da escola.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Card 3: Segunda Placa / Módulo ESP32 (Canto Inferior Esquerdo - Span 5) -->
+                        <div class="future-card f-card-hardware">
+                            <div class="f-badge-step">FASE 04</div>
+                            <div class="f-img-container">
+                                <img
+                                    src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80"
+                                    alt="Placa Módulo Wi-Fi ESP32 Microcontrolador"
+                                    class="f-img"
+                                />
+                                <div class="f-gradient-overlay"></div>
+                            </div>
+                            <div class="f-card-body">
+                                <div class="f-tech-tag sky">
+                                    HARDWARE IOT DE REDE
+                                </div>
+                                <h3>3. Segunda Placa (Módulo Wi-Fi)</h3>
+                                <p>
+                                    Uma placa secundária dedicada à
+                                    conectividade intercepta os dados da rede e
+                                    repassa a ordem ao Arduino UNO via
+                                    comunicação serial.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Card 4: Deslocamento Autônomo Final (Canto Inferior Direito - Span 7) -->
+                        <div class="future-card f-card-robot">
+                            <div class="f-badge-step highlight">FASE FINAL</div>
+                            <div class="f-img-container">
+                                <img
+                                    src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1000&q=80"
+                                    alt="Robô executando rota autônoma até o destino"
+                                    class="f-img"
+                                />
+                                <div class="f-gradient-overlay"></div>
+                            </div>
+                            <div class="f-card-body">
+                                <div class="f-tech-tag neon">
+                                    EXECUÇÃO AUTOMÁTICA
+                                </div>
+                                <h3>4. Robô Parte ao Destino</h3>
+                                <p>
+                                    O robô recebe a rota atualizada,
+                                    desatracando da base para realizar o
+                                    transporte e confirmação da entrega no local
+                                    solicitado.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 9. EVOLUÇÃO DO PROJETO (TIMELINE) -->
+            <section class="section section-medium" id="evolucao">
+                <div class="container">
+                    <div class="section-header">
+                        <span class="section-subtitle">CRONOGRAMA</span>
+                        <h2 class="section-title">Evolução do Projeto</h2>
+                    </div>
+
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-dot">01</div>
+                            <div class="timeline-content">
+                                <h4>Etapa 01 - Projeto e planejamento</h4>
+                                <p>
+                                    Estruturação das metas entre os cursos
+                                    técnicos.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-dot">02</div>
+                            <div class="timeline-content">
+                                <h4>Etapa 02 - Construção física</h4>
+                                <p>
+                                    Montagem do chassi e acoplamento de
+                                    estrutura.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-dot">03</div>
+                            <div class="timeline-content">
+                                <h4>Etapa 03 - Programação</h4>
+                                <p>
+                                    Codificação da lógica do microcontrolador.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-dot">04</div>
+                            <div class="timeline-content">
+                                <h4>Etapa 04 - Controle dos motores</h4>
+                                <p>Integração dos drivers Ponte H e rodas.</p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-dot">05</div>
+                            <div class="timeline-content">
+                                <h4>Etapa 05 - Detecção de obstáculos</h4>
+                                <p>
+                                    Instalação do sensor ultrassônico frontal.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-dot">06</div>
+                            <div class="timeline-content">
+                                <h4>Etapa 06 - Testes de trajetória</h4>
+                                <p>
+                                    Validação da rota fixa A para B nos
+                                    corredores.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item future-timeline">
+                            <div class="timeline-dot">07</div>
+                            <div class="timeline-content">
+                                <h4>Etapa 07 - Controle por rede (Futuro)</h4>
+                                <p>
+                                    Implementação de comunicação HTTP e chamada
+                                    web.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 10. PARTICIPAÇÃO DOS CURSOS -->
+            <section class="section section-dark" id="colaboracao">
+                <!-- Imagem e Textura de Fundo -->
+                <div class="colab-bg-container">
+                    <img
+                        src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1600&q=80"
+                        alt="Fundo Tecnológico"
+                        class="colab-bg-img"
+                    />
+                    <div class="colab-texture-grid"></div>
+                    <div class="colab-gradient-overlay"></div>
+                </div>
+
+                <div class="container relative-z">
+                    <div class="synergy-summary-box">
+                        <!-- Título Principal com Hover Suave -->
+                        <h2 class="synergy-title hover-text">
+                            Desenvolvimento de Sistemas + Logística
+                        </h2>
+
+                        <!-- Descrição Textual -->
+                        <p class="synergy-desc">
+                            <span class="highlight-ds"
+                                >Desenvolvimento de Sistemas</span
+                            >
+                            traz Código, Controle e Automação.
+                            <span class="highlight-log">Logística</span> traz
+                            Planejamento, Materiais e Trajetória. No centro
+                            dessa colaboração está o
+                            <strong class="highlight-robot hover-text"
+                                >ROBÔ AUTÔNOMO</strong
+                            >, unindo tecnologia e aplicação prática no ambiente
+                            escolar.
+                        </p>
+
+                        <!-- Pílulas de Conexão (Sem SVGs) -->
+                        <div class="colab-pills-wrap">
+                            <div class="colab-pill ds">
+                                <span>CÓDIGO & AUTOMAÇÃO</span>
+                            </div>
+
+                            <div class="colab-pill-core">
+                                <span>ROBÔ AUTÔNOMO</span>
+                            </div>
+
+                            <div class="colab-pill log">
+                                <span>FLUXO & TRAJETÓRIA</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- FOOTER -->
+        <footer class="footer">
+            <div class="container footer-content">
+                <div class="footer-info">
+                    <h4>E. E. Colônia dos Pescadores</h4>
+                    <p>
+                        Projeto desenvolvido pelos cursos técnicos integrados de
+                        Desenvolvimento de Sistemas e Logística.
+                    </p>
+                </div>
+                <div class="footer-meta">
+                    <p>&copy; 2026 E. E. Colônia dos Pescadores</p>
+                </div>
+            </div>
+        </footer>
+
+        <script src="script.js"></script>
+    </body>
+</html>
